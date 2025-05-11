@@ -33,7 +33,16 @@ for i in range(3):
     while codigoDeLocalidad != "C" and codigoDeLocalidad != "N" and codigoDeLocalidad != "R" and codigoDeLocalidad != "P":
         print("Dato erroneo, intente nuevamente")
         codigoDeLocalidad = input("\nIngrese el codigo de localidad de la persona (C/N/R/P): ").upper()
-    
+    # Codigo de localidad ya validado, ahora se asigna el localidad correspondiente.
+    if codigoDeLocalidad == "C":
+        localidad = "Cipolletti"
+    elif codigoDeLocalidad == "N":
+        localidad = "Neuquén Capital"
+    elif codigoDeLocalidad == "R":
+        localidad = "General Roca"
+    else: # codigoDeLocalidad == "P":
+        localidad = "Plottier"
+
     # Ingreso del codigo de seminario y su respectiva validación.
     codigoDeSeminario = input("\nIngrese el codigo de seminario de la persona (A/B/C/D/E): ").upper()
     while codigoDeSeminario != "A" and codigoDeSeminario != "B" and codigoDeSeminario != "C" and codigoDeSeminario != "D" and codigoDeSeminario != "E":
@@ -61,7 +70,17 @@ for i in range(3):
     while tipoDeModalidad != "M" and tipoDeModalidad != "V" and tipoDeModalidad != "P":
         print("Dato erroneo, intente nuevamente") 
         tipoDeModalidad = input("\nIngrese el tipo de modalidad de la persona (M/V/P): ").upper()
-    
+    # Tipo de modalidad ya validado, ahora se asigna la modalidad correspondiente.
+    if tipoDeModalidad == "M":
+        modalidad = "MIXTA"
+        lugarDeCursado = "Aula Magna y Zoom"
+    elif tipoDeModalidad == "V":
+        modalidad = "VIRTUAL"
+        lugarDeCursado = "Zoom"
+    else: # tipoDeModalidad == "P":
+        modalidad = "PRESENCIAL"
+        lugarDeCursado = "Aula Magna"
+
     # Ingreso de la cantidad de encuentros y su respectiva validación.
     cantidadDeEncuentros = int(input("\nIngrese la cantidad de encuentros de la persona (de 1 a 5): "))
     while cantidadDeEncuentros < 1 or cantidadDeEncuentros > 5:
@@ -73,7 +92,11 @@ for i in range(3):
     while tipoDePago != "E" and tipoDePago != "T":
         print("Dato erroneo, intente nuevamente")
         tipoDePago = input("\nIngrese el tipo de pago de la persona (E/T): ").upper()
-    
+    # Tipo de pago ya validado, ahora se asigna el pago correspondiente.
+    if tipoDePago == "E":
+        modalidadDePago = "Efectivo"
+    else: # tipoDePago == "T":
+        modalidadDePago = "Tarjeta"
 
     print("\n--------------------------------------------------------")
     print("ID:", id)
@@ -81,11 +104,11 @@ for i in range(3):
     print("Apellido:", apellido)
     print("Edad:", edad)
     print("Area de formacion:", areaDeFormacion)
-    print("Codigo de localidad:", codigoDeLocalidad)
+    print("Localidad:", localidad)
     print("Seminario:", seminario)
-    print("Tipo de modalidad:", tipoDeModalidad)
+    print("Modalidad:", modalidad)
     print("Cantidad de encuentros:", cantidadDeEncuentros)
-    print("Tipo de pago:", tipoDePago)
+    print("Modalidad de pago:", modalidadDePago)
     print("--------------------------------------------------------")
     input("\nIngrese cualquier tecla para continuar:\t")
     os.system("cls")
