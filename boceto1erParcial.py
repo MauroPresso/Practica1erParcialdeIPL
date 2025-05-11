@@ -15,12 +15,19 @@ for i in range(3):
         print("Dato erroneo, intente nuevamente")
         edad = int(input("\nIngrese la edad de la persona La edad debe estar entre 30 y 60 años: "))
     
-    # Ingreso del area de formacion y su respectiva validación.
-    areaDeFormacion = input("\nIngrese el area de formacion de la persona (ADM – NAT – TEC ): ").upper()
-    while areaDeFormacion != "ADM" and areaDeFormacion != "NAT" and  areaDeFormacion != "TEC":
+    # Ingreso del codigo dearea de formacion y su respectiva validación.
+    codigodeAreaDeFormacion = input("\nIngrese el area de formacion de la persona (ADM – NAT – TEC ): ").upper()
+    while codigodeAreaDeFormacion != "ADM" and codigodeAreaDeFormacion != "NAT" and  codigodeAreaDeFormacion != "TEC":
         print("Dato erroneo, intente nuevamente")
-        areaDeFormacion = input("\nIngrese el area de formacion de la persona (ADM – NAT – TEC ): ").upper()
-    
+        codigodeAreaDeFormacion = input("\nIngrese el area de formacion de la persona (ADM – NAT – TEC ): ").upper()
+    # Area de formacion ya validada, ahora se asigna el area de formacion correspondiente.
+    if codigodeAreaDeFormacion == "ADM":
+        areaDeFormacion = "ADMINISTRATIVAS"
+    elif codigodeAreaDeFormacion == "NAT":
+        areaDeFormacion = "NATURALES Y RENOVABLES"
+    else: # codigodeAreaDeFormacion == "TEC":
+        areaDeFormacion = "TECNOLÓGICAS"
+
     # Ingreso del codigo de localidad y su respectiva validación.
     codigoDeLocalidad = input("\nIngrese el codigo de localidad de la persona (C/N/R/P): ").upper()
     while codigoDeLocalidad != "C" and codigoDeLocalidad != "N" and codigoDeLocalidad != "R" and codigoDeLocalidad != "P":
@@ -45,7 +52,7 @@ for i in range(3):
     elif codigoDeSeminario == "D":
         seminario = "NUEVAS TECNOLOGÍAS DE SOFTWARE"
         importePorEncuentro = 11000
-    else:
+    else: # codigoDeSeminario == "E"
         seminario = "INFORMÁTICA EN LA NUBE"
         importePorEncuentro = 14900
 
@@ -75,7 +82,7 @@ for i in range(3):
     print("Edad:", edad)
     print("Area de formacion:", areaDeFormacion)
     print("Codigo de localidad:", codigoDeLocalidad)
-    print("Codigo de seminario:", codigoDeSeminario)
+    print("Seminario:", seminario)
     print("Tipo de modalidad:", tipoDeModalidad)
     print("Cantidad de encuentros:", cantidadDeEncuentros)
     print("Tipo de pago:", tipoDePago)
