@@ -107,6 +107,8 @@ for i in range(3):
     print("Localidad:", localidad)
     print("Seminario:", seminario)
     print("Modalidad:", modalidad)
+    print("Lugar de cursado:", lugarDeCursado)
+    print("Importe por encuentro:", importePorEncuentro)
     print("Cantidad de encuentros:", cantidadDeEncuentros)
     print("Modalidad de pago:", modalidadDePago)
     print("--------------------------------------------------------")
