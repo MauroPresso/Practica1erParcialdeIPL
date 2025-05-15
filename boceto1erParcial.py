@@ -66,10 +66,10 @@ for i in range(3):
         importePorEncuentro = 14900
 
     # Ingreso del tipo de modalidad y su respectiva validación.
-    tipoDeModalidad = input("\nIngrese el tipo de modalidad de la persona (M/V/P): ").upper()
+    tipoDeModalidad = input("\nIngrese el tipo de modalidad de la persona\nM: Mixta\nV: Virtual\nP: Presencial\nIngrese aquí: ").upper()
     while tipoDeModalidad != "M" and tipoDeModalidad != "V" and tipoDeModalidad != "P":
         print("Dato erroneo, intente nuevamente") 
-        tipoDeModalidad = input("\nIngrese el tipo de modalidad de la persona (M/V/P): ").upper()
+        tipoDeModalidad = input("\nIngrese el tipo de modalidad de la persona\nM: Mixta\nV: Virtual\nP: Presencial\nIngrese aquí: ").upper()
     # Tipo de modalidad ya validado, ahora se asigna la modalidad correspondiente.
     if tipoDeModalidad == "M":
         modalidad = "MIXTA"
