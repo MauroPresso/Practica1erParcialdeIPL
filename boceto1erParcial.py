@@ -15,7 +15,7 @@ for i in range(3):
         print("Dato erroneo, intente nuevamente")
         edad = int(input("\nIngrese la edad de la persona La edad debe estar entre 30 y 60 años: "))
     
-    # Ingreso del codigo dearea de formacion y su respectiva validación.
+    # Ingreso del codigo de area de formacion y su respectiva validación.
     codigodeAreaDeFormacion = input("\nIngrese el area de formacion de la persona (ADM – NAT – TEC ): ").upper()
     while codigodeAreaDeFormacion != "ADM" and codigodeAreaDeFormacion != "NAT" and  codigodeAreaDeFormacion != "TEC":
         print("Dato erroneo, intente nuevamente")
@@ -87,6 +87,9 @@ for i in range(3):
         print("Dato erroneo, intente nuevamente")
         cantidadDeEncuentros = int(input("\nIngrese la cantidad de encuentros de la persona (de 1 a 5): "))
     
+    # Calculo el importe total de la persona.
+    importeTotal = cantidadDeEncuentros * importePorEncuentro
+    
     # Ingreso del tipo de pago y su respectiva validación.
     tipoDePago = input("\nIngrese el tipo de pago de la persona (E/T): ").upper()
     while tipoDePago != "E" and tipoDePago != "T":
@@ -95,8 +98,10 @@ for i in range(3):
     # Tipo de pago ya validado, ahora se asigna el pago correspondiente.
     if tipoDePago == "E":
         modalidadDePago = "Efectivo"
+        importeApagar = importeTotal*(1 - 0.05) # 5% de descuento
     else: # tipoDePago == "T":
         modalidadDePago = "Tarjeta"
+        importeApagar = importeTotal*(1 + 0.10) # 10% de recargo
 
     print("\n--------------------------------------------------------")
     print("ID:", id)
@@ -108,9 +113,14 @@ for i in range(3):
     print("Seminario:", seminario)
     print("Modalidad:", modalidad)
     print("Lugar de cursado:", lugarDeCursado)
-    print("Importe por encuentro:", importePorEncuentro)
+    print(f"Importe por encuentro: {importePorEncuentro} pesos")
     print("Cantidad de encuentros:", cantidadDeEncuentros)
+    print(f"Importe total: {importeTotal} pesos")
     print("Modalidad de pago:", modalidadDePago)
+    if modalidadDePago == "Efectivo":
+        print("Importe a pagar: ", importeApagar, "pesos")
+    else: # modalidadDePago == "Tarjeta":
+        print("Importe a pagar: ", importeApagar, "pesos")
     print("--------------------------------------------------------")
     input("\nIngrese cualquier tecla para continuar:\t")
     os.system("cls")
