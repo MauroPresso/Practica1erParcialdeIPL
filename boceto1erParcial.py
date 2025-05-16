@@ -3,6 +3,39 @@ os.system("cls")
 
 # programa principal
 
+# Inicializo en CERO los contadores por localidad
+contadorCipolletti = 0
+contadorNQN = 0
+contadorRoca = 0
+contadorPlottier = 0
+
+# Inicializo en CERO los contadores por modalidad
+contadorModalidadMixta = 0
+contadorModalidadVirtual = 0
+contadorModalidadPresencial = 0
+
+# Inicializo en CERO los contadores por área de formación
+contadorAreaAdministrativa = 0
+contadorAreaNaturales = 0
+contadorAreaTecnologicas = 0
+
+# Inicializo en CERO los contadores por seminario
+contadorSeminarioIAenNaturales = 0
+contadorSeminarioLiderazgo = 0
+contadorSeminarioRRHH = 0
+contadorSeminarioNuevasTECSoftware = 0
+contadorSeminarioInfoEnLaNube = 0
+
+# Inicializo en CERO los contadores por modo de pago
+contadorEfectivo = 0
+contadorTarjeta = 0
+
+# Inicializo en CERO los acumuladores
+acumuladorDeImportesTotales = 0
+acumuladorDeImportesApagarEfectivo = 0
+acumuladorDeImportesApagarTarjeta = 0
+
+
 for i in range(3):
     id = i + 1
     
@@ -89,6 +122,7 @@ for i in range(3):
     
     # Calculo el importe total de la persona.
     importeTotal = cantidadDeEncuentros * importePorEncuentro
+    acumuladorDeImportesTotales = acumuladorDeImportesTotales + importeTotal
     
     # Ingreso del tipo de pago y su respectiva validación.
     tipoDePago = input("\nIngrese el tipo de pago de la persona\nE: Efectivo\nT: Tarjeta\nIngrese aquí: ").upper()
@@ -99,10 +133,13 @@ for i in range(3):
     if tipoDePago == "E":
         modalidadDePago = "Efectivo"
         importeApagar = importeTotal*(1 - 0.05) # 5% de descuento
+        acumuladorDeImportesApagarEfectivo = acumuladorDeImportesApagarEfectivo + importeApagar
     else: # tipoDePago == "T":
         modalidadDePago = "Tarjeta"
         importeApagar = importeTotal*(1 + 0.10) # 10% de recargo
+        acumuladorDeImportesApagarTarjeta = acumuladorDeImportesApagarTarjeta + importeApagar
 
+    # Muestro los datos de la persona.
     print("\n--------------------------------------------------------")
     print("ID:", id)
     print("Nombre:", nombre)
@@ -124,3 +161,13 @@ for i in range(3):
     print("--------------------------------------------------------")
     input("\nIngrese cualquier tecla para continuar:\t")
     os.system("cls")
+# Fin del ciclo for.
+
+print("\n--------------------------------------------------------")
+
+
+print("\n")
+print("Importes totales: ", acumuladorDeImportesTotales, "pesos")
+print("Importes a pagar por efectivo: ", acumuladorDeImportesApagarEfectivo, "pesos")
+print("Importes a pagar por tarjeta: ", acumuladorDeImportesApagarTarjeta, "pesos")
+print("--------------------------------------------------------")
