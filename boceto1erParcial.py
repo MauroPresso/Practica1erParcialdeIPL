@@ -35,7 +35,7 @@ acumuladorDeImportesTotales = 0
 acumuladorDeImportesApagarEfectivo = 0
 acumuladorDeImportesApagarTarjeta = 0
 
-
+# Inicio ciclo for.
 for i in range(3):
     id = i + 1
     
@@ -56,10 +56,13 @@ for i in range(3):
     # Area de formacion ya validada, ahora se asigna el area de formacion correspondiente.
     if codigodeAreaDeFormacion == "ADM":
         areaDeFormacion = "ADMINISTRATIVAS"
+        contadorAreaAdministrativa += 1
     elif codigodeAreaDeFormacion == "NAT":
         areaDeFormacion = "NATURALES Y RENOVABLES"
+        contadorAreaNaturales += 1
     else: # codigodeAreaDeFormacion == "TEC":
         areaDeFormacion = "TECNOLÓGICAS"
+        contadorAreaTecnologicas += 1
 
     # Ingreso del codigo de localidad y su respectiva validación.
     codigoDeLocalidad = input("\nIngrese el codigo de localidad de la persona\nC: Cipolletti\nN: Neuquén Capital\nR: General Roca\nP: Plottier\nIngrese aquí: ").upper()
@@ -69,12 +72,16 @@ for i in range(3):
     # Codigo de localidad ya validado, ahora se asigna el localidad correspondiente.
     if codigoDeLocalidad == "C":
         localidad = "Cipolletti"
+        contadorCipolletti += 1
     elif codigoDeLocalidad == "N":
         localidad = "Neuquén Capital"
+        contadorNQN += 1
     elif codigoDeLocalidad == "R":
         localidad = "General Roca"
+        contadorRoca += 1
     else: # codigoDeLocalidad == "P":
         localidad = "Plottier"
+        contadorPlottier += 1
 
     # Ingreso del codigo de seminario y su respectiva validación.
     codigoDeSeminario = input("\nIngrese el codigo de seminario de la persona\nA: IA EN LAS ÁREAS NATURALES\nB: LIDERAZGO SIGLO XXI\nC: ADMINISTRACIÓN DE RRHH\nD: NUEVAS TECNOLOGÍAS DE SOFTWARE\nE: INFORMÁTICA EN LA NUBE\nIngrese aquí: ").upper()
@@ -85,18 +92,23 @@ for i in range(3):
     if codigoDeSeminario == "A":
         seminario = "IA EN LAS ÁREAS NATURALES"
         importePorEncuentro = 12500
+        contadorSeminarioIAenNaturales += 1
     elif codigoDeSeminario == "B":
         seminario = "LIDERAZGO SIGLO XXI"
         importePorEncuentro = 8900
+        contadorSeminarioLiderazgo += 1
     elif codigoDeSeminario == "C":
         seminario = "ADMINISTRACIÓN DE RRHH"
         importePorEncuentro = 10500
+        contadorSeminarioRRHH += 1
     elif codigoDeSeminario == "D":
         seminario = "NUEVAS TECNOLOGÍAS DE SOFTWARE"
         importePorEncuentro = 11000
+        contadorSeminarioNuevasTECSoftware += 1
     else: # codigoDeSeminario == "E"
         seminario = "INFORMÁTICA EN LA NUBE"
         importePorEncuentro = 14900
+        contadorSeminarioInfoEnLaNube += 1
 
     # Ingreso del tipo de modalidad y su respectiva validación.
     tipoDeModalidad = input("\nIngrese el tipo de modalidad de la persona\nM: Mixta\nV: Virtual\nP: Presencial\nIngrese aquí: ").upper()
@@ -107,12 +119,15 @@ for i in range(3):
     if tipoDeModalidad == "M":
         modalidad = "MIXTA"
         lugarDeCursado = "Aula Magna y Zoom"
+        contadorModalidadMixta += 1
     elif tipoDeModalidad == "V":
         modalidad = "VIRTUAL"
         lugarDeCursado = "Zoom"
+        contadorModalidadVirtual += 1
     else: # tipoDeModalidad == "P":
         modalidad = "PRESENCIAL"
         lugarDeCursado = "Aula Magna"
+        contadorModalidadPresencial += 1
 
     # Ingreso de la cantidad de encuentros y su respectiva validación.
     cantidadDeEncuentros = int(input("\nIngrese la cantidad de encuentros de la persona (de 1 a 5): "))
@@ -134,13 +149,15 @@ for i in range(3):
         modalidadDePago = "Efectivo"
         importeApagar = importeTotal*(1 - 0.05) # 5% de descuento
         acumuladorDeImportesApagarEfectivo = acumuladorDeImportesApagarEfectivo + importeApagar
+        contadorEfectivo += 1
     else: # tipoDePago == "T":
         modalidadDePago = "Tarjeta"
         importeApagar = importeTotal*(1 + 0.10) # 10% de recargo
         acumuladorDeImportesApagarTarjeta = acumuladorDeImportesApagarTarjeta + importeApagar
+        contadorTarjeta += 1
 
     # Muestro los datos de la persona.
-    print("\n--------------------------------------------------------")
+    print("\n-----------------DATOS DE LA PERSONA-----------------")
     print("ID:", id)
     print("Nombre:", nombre)
     print("Apellido:", apellido)
@@ -163,11 +180,30 @@ for i in range(3):
     os.system("cls")
 # Fin del ciclo for.
 
-print("\n--------------------------------------------------------")
-
-
-print("\n")
-print("Importes totales: ", acumuladorDeImportesTotales, "pesos")
-print("Importes a pagar por efectivo: ", acumuladorDeImportesApagarEfectivo, "pesos")
-print("Importes a pagar por tarjeta: ", acumuladorDeImportesApagarTarjeta, "pesos")
+print("\n\n\n----------------RESULTADOS---------------------")
+print("\nParticipantes por área de formación:")
+print("Cantidad de personas que cursaron de administrativa:", contadorAreaAdministrativa)
+print("Cantidad de personas que cursaron de Naturales:", contadorAreaNaturales)
+print("Cantidad de personas que cursaron de Tecnologicas:", contadorAreaTecnologicas)
+print("\n\nParticipantes por modalidad:")
+print("Cantidad de personas que cursaron de Mixta:", contadorModalidadMixta)
+print("Cantidad de personas que cursaron de Virtual:", contadorModalidadVirtual)
+print("Cantidad de personas que cursaron de Presencial:", contadorModalidadPresencial)
+print("\n\nParticipantes por seminario:")
+print("Cantidad de personas que cursaron de IA en Naturales:", contadorSeminarioIAenNaturales)
+print("Cantidad de personas que cursaron de RRHH:", contadorSeminarioRRHH)
+print("Cantidad de personas que cursaron de Liderazgo:", contadorSeminarioLiderazgo)
+print("Cantidad de personas que cursaron de Nuevas TEC Software:", contadorSeminarioNuevasTECSoftware)
+print("Cantidad de personas que cursaron de Info en la Nube:", contadorSeminarioInfoEnLaNube)
+print("\n\nParticipantes por localidad:")
+print("Cantidad de personas que cursaron de Plottier:", contadorPlottier)
+print("Cantidad de personas que cursaron de NQN:", contadorNQN)
+print("Cantidad de personas que cursaron de Cipolletti:", contadorCipolletti)
+print("Cantidad de personas que cursaron de Roca:", contadorRoca)
+print("\n\nRecaudación:")
+print("\nImportes totales: ", acumuladorDeImportesTotales, "pesos")
+print("\nCantidad de personas que pagaron con efectivo: ", contadorEfectivo)
+print("Importes pagados por efectivo: ", acumuladorDeImportesApagarEfectivo, "pesos")
+print("\nCantidad de personas que pagaron con tarjeta: ", contadorTarjeta)
+print("Importes pagados por tarjeta: ", acumuladorDeImportesApagarTarjeta, "pesos")
 print("--------------------------------------------------------")
