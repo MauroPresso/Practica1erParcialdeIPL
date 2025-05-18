@@ -107,16 +107,29 @@ for i in range(3):
     print("Zona:", zona)
     print("Sector:", sector)
     print(f"Edad: {edad} años")
-    print("Años de antiguedad:", aniosDeAntiguedad)
+    print(f"Antiguedad: {aniosDeAntiguedad} años")
     print(f"Sueldo: {sueldo} pesos")
     print("Capacitación:", capacitacion)
     print("Modalidad:", modalidad)
     print("-------------------------------------------------------\n")
-    input("Presione ENTER para continuar...")
-    os.system("cls") # Limpiar pantalla
-    
-    
+    input("\nPresione ENTER para continuar...")
+    os.system("cls") # Limpiar pantalla   
+# Fin del ciclo for.
 
-    
+print("\n\n\n----------------RESULTADOS---------------------")
+print("\nCantidad de personas por capacitación:")
+print("OFFICE:", contadorOFFICE)
+print("COMUNICACION:", contadorCOMUNICACION)
+print("CLIMA ORGANIZACIONAL:", contadorCLIMAorganizacional)
+print("VENTAS ONLINE:", contadorVENTASonline)
+print("\nCantidad de personas de la modalidad mixta:", contadorBImodal)
+print("\n")
+print(f"Acumulador de sueldos: {acumuladorSueldos} pesos")
+print(f"Acumulador de sueldos por años de antigüedad: {acumuladorSueldosPorAnios} pesos")
+print("\n")
+print(f"Promedio de edades: {acumuladorEdades/cantidadDeEdades} años")
+print(f"Promedio de sueldos: {acumuladorSueldos/cantidadDeEdades} pesos")
+print("-----------------------------------------------------")
+input("\nPresione ENTER para continuar...") 
 
     
