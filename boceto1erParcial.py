@@ -207,3 +207,5 @@ print("Importes pagados por efectivo: ", acumuladorDeImportesApagarEfectivo, "pe
 print("\nCantidad de personas que pagaron con tarjeta: ", contadorTarjeta)
 print("Importes pagados por tarjeta: ", acumuladorDeImportesApagarTarjeta, "pesos")
 print("--------------------------------------------------------")
+input("\nPresione ENTER para continuar...") 
+print("\nFin del programa.")
