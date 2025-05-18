@@ -37,10 +37,11 @@ for i in range(3):
         print("ERROR: Ingrese un sexo válido")
         sexo = input("Ingrese el sexo de la persona:\nM para masculino\nF para femenino\nIngrese aquí: ").upper()
     
-    codigoDeSector = input("Ingrese el código de sector de la persona (A/B/C): ").upper
+    codigoDeSector = input("Ingrese el código de sector de la persona (A/B/C): ").upper()
     while codigoDeSector!="A" and codigoDeSector!="B" and codigoDeSector!="C":
         print("ERROR: Ingrese un código de sector válido")
-        codigoDeSector = input("Ingrese el código de sector de la persona (A/B/C): ").upper
+        codigoDeSector = input("Ingrese el código de sector de la persona (A/B/C): ").upper()
+    
     if codigoDeSector=="A":
         sector = "FINANZAS"
         sueldo = 1780632
