@@ -55,10 +55,10 @@ for i in range(3):
     # Acumular sueldos
     acumuladorSueldos = acumuladorSueldos + sueldo
 
-    aniosDeAntiguedad = int(input("Ingrese la antiguedad de la persona (entre 0 a 20 años):"))
+    aniosDeAntiguedad = int(input("Ingrese la antiguedad de la persona (entre 0 a 20 años): "))
     while aniosDeAntiguedad < 0 or  aniosDeAntiguedad > 20:
         print("ERROR: Ingrese una antiguedad válida")
-        aniosDeAntiguedad = int(input("Ingrese la antiguedad de la persona (entre 0 a 20 años):"))
+        aniosDeAntiguedad = int(input("Ingrese la antiguedad de la persona (entre 0 a 20 años): "))
 
     # Acumular sueldo por años de antiguedad
     acumuladorSueldosPorAnios = acumuladorSueldosPorAnios + sueldo * aniosDeAntiguedad
