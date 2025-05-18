@@ -132,5 +132,5 @@ print(f"Promedio de edades: {acumuladorEdades/cantidadDeEdades} años")
 print(f"Promedio de sueldos: {acumuladorSueldos/cantidadDeEdades} pesos")
 print("-----------------------------------------------------")
 input("\nPresione ENTER para continuar...") 
-
+print("\nFin del programa.")
     
