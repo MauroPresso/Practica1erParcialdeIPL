@@ -67,7 +67,6 @@ for i in range(10):
         sector = "LOGÍSTICA"
         capacitacion = "ESTRATEGIAS"
         contadorSectorC = contadorSectorC + 1
-    # Valide sector
 
     # Calcular el Plus en el sueldo por hacer capacitación
     if haceCapacitacion == "S":
@@ -77,7 +76,17 @@ for i in range(10):
     else: # haceCapacitacion == "N"
         plus = 0
         contadorNOcapacitacion = contadorNOcapacitacion + 1
-    # Valide capacitación
+  
+    # Calculo el sueldo total
+    sueldoTOTAL = sueldo + plus
+
+    # Sumo los sueldos totales por sector
+    if codigoDeSector == "A":
+        acumuladorSueldosTOTALESsectorA = acumuladorSueldosTOTALESsectorA + sueldoTOTAL
+    elif codigoDeSector == "B":
+        acumuladorSueldosTOTALESsectorB = acumuladorSueldosTOTALESsectorB + sueldoTOTAL
+    else: # codigoDeSector == "C"
+        acumuladorSueldosTOTALESsectorC = acumuladorSueldosTOTALESsectorC + sueldoTOTAL
 
     # Asigno localidad
     if codigoDeLocalidad == "C":
@@ -89,7 +98,7 @@ for i in range(10):
 
     # Muestro los datos de la persona
     print("\n-----------------DATOS DE LA PERSONA-----------------")
-    print("ID:", id)
+    print("Numero de inscripción:", numeroDeInscripicion)
     print("Nombre:", nombre)
     print("Apellido:", apellido)
     print("Sector:", sector)
@@ -97,13 +106,17 @@ for i in range(10):
     print("Localidad:", localidad)
     print("Sueldo:", sueldo)
     print("Plus:", plus)
-
+    print("Sueldo total:", sueldoTOTAL)
     print("-----------------------------------------------------")
 # Fin ciclo for
 print("\n\n\n----------------RESULTADOS---------------------")
 print("Total Plus:", acumuladorPlus)
-print("Cantidad de trabajadores que hicieron capacitación:", contadorSIcapacitacion)
+print("\nCantidad de trabajadores que hicieron capacitación:", contadorSIcapacitacion)
 print("Cantidad de trabajadores que no hicieron capacitación:", contadorNOcapacitacion)
+print("\nCantidad de trabajadores en sector A:", contadorSectorA)
+print("Cantidad de trabajadores en sector B:", contadorSectorB)
+print("Cantidad de trabajadores en sector C:", contadorSectorC)
+print("\nPromedio de sueldo del sector")
 print("-----------------------------------------------------")
 input("\nPresione ENTER para continuar...") 
 print("\nFin del programa.")
