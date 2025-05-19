@@ -102,7 +102,11 @@ for i in range(10):
     print("Nombre:", nombre)
     print("Apellido:", apellido)
     print("Sector:", sector)
-    print("Capacitación:", capacitacion)
+    if haceCapacitacion == "S":
+        print("Capacitación:", capacitacion)
+    else: # haceCapacitacion == "N"
+        print("Capacitación:", "NO HIZO CAPACITACIÓN")
+    print("Antiguedad:", antiguedad)
     print("Localidad:", localidad)
     print("Sueldo:", sueldo)
     print("Plus:", plus)
@@ -110,7 +114,7 @@ for i in range(10):
     print("-----------------------------------------------------")
 # Fin ciclo for
 print("\n\n\n----------------RESULTADOS---------------------")
-print("Total Plus:", acumuladorPlus) # Ejercicio 4 inciso l.
+print("\nTotal Plus:", acumuladorPlus) # Ejercicio 4 inciso l.
 print("\nCantidad de trabajadores que hicieron capacitación: ", contadorSIcapacitacion) # Ejercicio 4 inciso m.
 print("Cantidad de trabajadores que no hicieron capacitación: ", contadorNOcapacitacion) # Ejercicio 4 inciso n.
 # Ejercicio 4 inciso j.
