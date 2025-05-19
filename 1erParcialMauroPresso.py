@@ -22,7 +22,7 @@ acumuladorPlus = 0
 
 
 
-for i in range(3):
+for i in range(10):
     
     numeroDeInscripicion = i + 100 # i arranca en cero.
 
