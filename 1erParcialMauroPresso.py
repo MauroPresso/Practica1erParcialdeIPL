@@ -117,6 +117,8 @@ for i in range(3):
     print("Plus:", plus)
     print("Sueldo total:", sueldoTOTAL)
     print("-----------------------------------------------------")
+    input("\nIngrese cualquier tecla para continuar:\t")
+    os.system("cls")
 # Fin ciclo for
 print("\n\n\n----------------RESULTADOS---------------------")
 print("\nTotal Plus:", acumuladorPlus) # Ejercicio 4 inciso l.
