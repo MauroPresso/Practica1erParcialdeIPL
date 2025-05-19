@@ -22,7 +22,7 @@ acumuladorPlus = 0
 
 
 
-for i in range(10):
+for i in range(3):
     
     numeroDeInscripicion = i + 100 # i arranca en cero.
 
@@ -113,9 +113,9 @@ for i in range(10):
         print("Capacitación:", "NO HIZO CAPACITACIÓN")
     print("Antiguedad:", antiguedad, "años")
     print("Localidad:", localidad)
-    print("Sueldo:", sueldo)
-    print("Plus:", plus)
-    print("Sueldo total:", sueldoTOTAL)
+    print("Sueldo:", sueldo, "pesos")
+    print("Plus:", plus, "pesos") 
+    print("Sueldo total:", sueldoTOTAL, "pesos")
     print("-----------------------------------------------------")
     input("\nIngrese cualquier tecla para continuar:\t")
     os.system("cls")
@@ -129,9 +129,19 @@ print("\nCantidad de trabajadores en sector A: ", contadorSectorA)
 print("Cantidad de trabajadores en sector B: ", contadorSectorB)
 print("Cantidad de trabajadores en sector C: ", contadorSectorC)
 # Ejercicio 4 inciso k.
-print("\nPromedio de sueldo del sector A: ", acumuladorSueldosTOTALESsectorA/contadorSectorA)
-print("Promedio de sueldo del sector B: ", acumuladorSueldosTOTALESsectorB/contadorSectorB)
-print("Promedio de sueldo del sector C: ", acumuladorSueldosTOTALESsectorC/contadorSectorC)
+print()
+if contadorSectorA > 0:
+    print("Promedio de sueldo del sector A: ", acumuladorSueldosTOTALESsectorA/contadorSectorA)
+else:
+    print("No hay trabajadores en el sector A.")
+if contadorSectorB > 0:
+    print("Promedio de sueldo del sector B: ", acumuladorSueldosTOTALESsectorB/contadorSectorB)
+else:
+    print("No hay trabajadores en el sector B.")
+if contadorSectorC > 0:
+    print("Promedio de sueldo del sector C: ", acumuladorSueldosTOTALESsectorC/contadorSectorC)
+else:
+    print("No hay trabajadores en el sector C.")
 print("-----------------------------------------------------")
 input("\nPresione ENTER para continuar...")
 os.system("cls")
