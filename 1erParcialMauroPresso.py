@@ -111,7 +111,7 @@ for i in range(3):
         print("Capacitación:", capacitacion)
     else: # haceCapacitacion == "N"
         print("Capacitación:", "NO HIZO CAPACITACIÓN")
-    print("Antiguedad:", antiguedad)
+    print("Antiguedad:", antiguedad, "años")
     print("Localidad:", localidad)
     print("Sueldo:", sueldo)
     print("Plus:", plus)
@@ -121,7 +121,7 @@ for i in range(3):
     os.system("cls")
 # Fin ciclo for
 print("\n\n\n----------------RESULTADOS---------------------")
-print("\nTotal Plus:", acumuladorPlus) # Ejercicio 4 inciso l.
+print("\nAcumulacion del Plus:", acumuladorPlus) # Ejercicio 4 inciso l.
 print("\nCantidad de trabajadores que hicieron capacitación: ", contadorSIcapacitacion) # Ejercicio 4 inciso m.
 print("Cantidad de trabajadores que no hicieron capacitación: ", contadorNOcapacitacion) # Ejercicio 4 inciso n.
 # Ejercicio 4 inciso j.
