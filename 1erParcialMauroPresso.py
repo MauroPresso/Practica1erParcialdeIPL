@@ -120,7 +120,7 @@ for i in range(3):
     input("\nIngrese cualquier tecla para continuar:\t")
     os.system("cls")
 # Fin ciclo for
-print("\n\n\n----------------RESULTADOS---------------------")
+print("\n----------------RESULTADOS---------------------")
 print("\nAcumulacion del Plus:", acumuladorPlus) # Ejercicio 4 inciso l.
 print("\nCantidad de trabajadores que hicieron capacitación: ", contadorSIcapacitacion) # Ejercicio 4 inciso m.
 print("Cantidad de trabajadores que no hicieron capacitación: ", contadorNOcapacitacion) # Ejercicio 4 inciso n.
