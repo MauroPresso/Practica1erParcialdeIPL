@@ -3,6 +3,16 @@ os.system("cls")
 
 # Programa principal
 
+# Inicializo los contadores por sector
+contadorSectorA = 0
+contadorSectorB = 0
+contadorSectorC = 0
+
+# Inicializo el acumulador de Plus
+acumuladorPlus = 0
+
+
+
 for i in range(10):
     
     numeroDeInscripicion = i + 100 # i arranca en cero.
@@ -42,23 +52,25 @@ for i in range(10):
         sueldo = 1224500
         sector = "ADMINISTRACIÓN"
         capacitacion = "TANGO GESTION"
+        contadorSectorA = contadorSectorA + 1
     elif codigoDeSector == "B":
         sueldo = 1225200
         sector = "DESARROLLO"
         capacitacion = "JOMMLA"
+        contadorSectorB = contadorSectorB + 1
     else: # codigoDeSector == "C"
         sueldo = 1228800
         sector = "LOGÍSTICA"
         capacitacion = "ESTRATEGIAS"
-    # Valide sueldo
+        contadorSectorC = contadorSectorC + 1
+    # Valide sector
 
     # Calcular el Plus en el sueldo por hacer capacitación
     if haceCapacitacion == "S":
-        sueldo = sueldo*(1 + 0.10)
-        cobraPlus = True
+        plus = sueldo*(0.10)
+        acumuladorPlus = acumuladorPlus + plus
     else:
-        sueldo = sueldo*(1 + 0)
-        cobraPlus = False
+        plus = 0
     # Valide plus
 
     # Asigno localidad
@@ -69,4 +81,5 @@ for i in range(10):
     else: # codigoDeLocalidad == "P"
         localidad = "Plottier"
     
-    
+
+
