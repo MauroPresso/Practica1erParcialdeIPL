@@ -8,6 +8,11 @@ contadorSectorA = 0
 contadorSectorB = 0
 contadorSectorC = 0
 
+# Acumulo sueldos por sector
+acumuladorSueldosTOTALESsectorA = 0
+acumuladorSueldosTOTALESsectorB = 0
+acumuladorSueldosTOTALESsectorC = 0
+
 # Inicializo los contadores de la capacitacion
 contadorSIcapacitacion = 0
 contadorNOcapacitacion = 0
@@ -17,7 +22,7 @@ acumuladorPlus = 0
 
 
 
-for i in range(10):
+for i in range(3):
     
     numeroDeInscripicion = i + 100 # i arranca en cero.
 
