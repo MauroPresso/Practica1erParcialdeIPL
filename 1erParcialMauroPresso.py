@@ -24,26 +24,11 @@ for i in range(10):
         codigoDeSector = input("Ingrese su código de sector (A/B/C): ").upper()
     # Valide código de sector
 
-    if codigoDeSector == "A":
-        sueldo = 1224500
-        sector = "ADMINISTRACIÓN"
-    elif codigoDeSector == "B":
-        sueldo = 1225200
-        sector = "DESARROLLO"
-    else: # codigoDeSector == "C"
-        sueldo = 1228800
-        sector = "LOGÍSTICA"
-    # Valide sector	
-    # Valide sueldo base
-
-
-
-
     # ¿Hace la capacitación?
-    capacitacion = input("Ingrese si hace la capacitación (S/N): ").upper()
-    while capacitacion != "S" and capacitacion != "N":
+    haceCapacitacion = input("Ingrese si hace la capacitación (S/N): ").upper()
+    while haceCapacitacion != "S" and haceCapacitacion != "N":
         print("Respuesta incorrecta. Intente de nuevo.")
-        capacitacion = input("Ingrese si hace la capacitación (S/N): ").upper()
+        haceCapacitacion = input("Ingrese si hace la capacitación (S/N): ").upper()
     # Valide capacitación
 
     # Ingreso y valido código de localidad
@@ -53,3 +38,35 @@ for i in range(10):
         codigoDeLocalidad = input("Ingrese su código de localidad (C/N/P): ").upper()
     # Valide código de localidad
 
+    if codigoDeSector == "A":
+        sueldo = 1224500
+        sector = "ADMINISTRACIÓN"
+        capacitacion = "TANGO GESTION"
+    elif codigoDeSector == "B":
+        sueldo = 1225200
+        sector = "DESARROLLO"
+        capacitacion = "JOMMLA"
+    else: # codigoDeSector == "C"
+        sueldo = 1228800
+        sector = "LOGÍSTICA"
+        capacitacion = "ESTRATEGIAS"
+    # Valide sueldo
+
+    # Calcular el Plus en el sueldo por hacer capacitación
+    if haceCapacitacion == "S":
+        sueldo = sueldo*(1 + 0.10)
+        cobraPlus = True
+    else:
+        sueldo = sueldo*(1 + 0)
+        cobraPlus = False
+    # Valide plus
+
+    # Asigno localidad
+    if codigoDeLocalidad == "C":
+        localidad = "Cipolletti"
+    elif codigoDeLocalidad == "N":
+        localidad = "Neuquén"
+    else: # codigoDeLocalidad == "P"
+        localidad = "Plottier"
+    
+    
