@@ -8,6 +8,10 @@ contadorSectorA = 0
 contadorSectorB = 0
 contadorSectorC = 0
 
+# Inicializo los contadores de la capacitacion
+contadorSIcapacitacion = 0
+contadorNOcapacitacion = 0
+
 # Inicializo el acumulador de Plus
 acumuladorPlus = 0
 
@@ -69,9 +73,11 @@ for i in range(10):
     if haceCapacitacion == "S":
         plus = sueldo*(0.10)
         acumuladorPlus = acumuladorPlus + plus
-    else:
+        contadorSIcapacitacion = contadorSIcapacitacion + 1
+    else: # haceCapacitacion == "N"
         plus = 0
-    # Valide plus
+        contadorNOcapacitacion = contadorNOcapacitacion + 1
+    # Valide capacitación
 
     # Asigno localidad
     if codigoDeLocalidad == "C":
@@ -80,6 +86,25 @@ for i in range(10):
         localidad = "Neuquén"
     else: # codigoDeLocalidad == "P"
         localidad = "Plottier"
-    
 
+    # Muestro los datos de la persona
+    print("\n-----------------DATOS DE LA PERSONA-----------------")
+    print("ID:", id)
+    print("Nombre:", nombre)
+    print("Apellido:", apellido)
+    print("Sector:", sector)
+    print("Capacitación:", capacitacion)
+    print("Localidad:", localidad)
+    print("Sueldo:", sueldo)
+    print("Plus:", plus)
+
+    print("-----------------------------------------------------")
+# Fin ciclo for
+print("\n\n\n----------------RESULTADOS---------------------")
+print("Total Plus:", acumuladorPlus)
+print("Cantidad de trabajadores que hicieron capacitación:", contadorSIcapacitacion)
+print("Cantidad de trabajadores que no hicieron capacitación:", contadorNOcapacitacion)
+print("-----------------------------------------------------")
+input("\nPresione ENTER para continuar...") 
+print("\nFin del programa.")
 
