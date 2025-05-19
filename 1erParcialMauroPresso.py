@@ -110,13 +110,17 @@ for i in range(10):
     print("-----------------------------------------------------")
 # Fin ciclo for
 print("\n\n\n----------------RESULTADOS---------------------")
-print("Total Plus:", acumuladorPlus)
-print("\nCantidad de trabajadores que hicieron capacitación:", contadorSIcapacitacion)
-print("Cantidad de trabajadores que no hicieron capacitación:", contadorNOcapacitacion)
-print("\nCantidad de trabajadores en sector A:", contadorSectorA)
-print("Cantidad de trabajadores en sector B:", contadorSectorB)
-print("Cantidad de trabajadores en sector C:", contadorSectorC)
-print("\nPromedio de sueldo del sector")
+print("Total Plus:", acumuladorPlus) # Ejercicio 4 inciso l.
+print("\nCantidad de trabajadores que hicieron capacitación: ", contadorSIcapacitacion) # Ejercicio 4 inciso m.
+print("Cantidad de trabajadores que no hicieron capacitación: ", contadorNOcapacitacion) # Ejercicio 4 inciso n.
+# Ejercicio 4 inciso j.
+print("\nCantidad de trabajadores en sector A: ", contadorSectorA)
+print("Cantidad de trabajadores en sector B: ", contadorSectorB)
+print("Cantidad de trabajadores en sector C: ", contadorSectorC)
+# Ejercicio 4 inciso k.
+print("\nPromedio de sueldo del sector A: ", acumuladorSueldosTOTALESsectorA/contadorSectorA)
+print("Promedio de sueldo del sector B: ", acumuladorSueldosTOTALESsectorB/contadorSectorB)
+print("Promedio de sueldo del sector C: ", acumuladorSueldosTOTALESsectorC/contadorSectorC)
 print("-----------------------------------------------------")
 input("\nPresione ENTER para continuar...") 
 print("\nFin del programa.")
