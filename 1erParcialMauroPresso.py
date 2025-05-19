@@ -133,6 +133,7 @@ print("\nPromedio de sueldo del sector A: ", acumuladorSueldosTOTALESsectorA/con
 print("Promedio de sueldo del sector B: ", acumuladorSueldosTOTALESsectorB/contadorSectorB)
 print("Promedio de sueldo del sector C: ", acumuladorSueldosTOTALESsectorC/contadorSectorC)
 print("-----------------------------------------------------")
-input("\nPresione ENTER para continuar...") 
+input("\nPresione ENTER para continuar...")
+os.system("cls")
 print("\nFin del programa.")
 
